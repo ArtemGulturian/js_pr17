@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="button" value="Нажми меня" id="elem">
+
+        <script>
+        elem.onclick = function(event) {
+            // вывести тип события, элемент и координаты клика
+            console.log(event.type + " на " + event.currentTarget);
+            console.log("Координаты: " + event.clientX + ":" + event.clientY);
+        };
+        </script>
+
+        <!-- -->
+
+        <button id="elem">Нажми меня</button>
+
+        <script>
+            class Menu {
+                handleEvent(event) {
+                    // mousedown -> onMousedown
+                    let method = 'on' + event.type[0].toUpperCase() + event.type.slice(1);
+                    this[method](event);
+                }
+                onMousedown() {
+                    elem.innerHTML = "Кнопка мыши нажата";
+                }
+                onMouseup() {
+                    elem.innerHTML += "...и отжата.";
+                }
+            }
+
+        let menu = new Menu();
+        elem.addEventListener('mousedown', menu);
+        elem.addEventListener('mouseup', menu);
+        </script>
+
+</body>
+</html>

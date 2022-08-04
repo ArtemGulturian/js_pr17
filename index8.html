@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <button type="button" id="elem">Нажми меня</button>
+        <div id="text">text</div>
+        <button id="hider">Нажми меня, чтоб спрятать</button>
+
+        <script>
+            document.getElementById('elem').onclick = function() {
+                document.getElementById('text').hidden = true;
+            }
+
+            document.getElementById('hider').onclick = function() {
+                document.getElementById('hider').hidden = true;
+                document.getElementById('text').hidden = true;
+            }
+
+            function handler() {
+                console.log('1');
+            }
+            button.addEventListener("click", handler);
+            button.removeEventListener("click", handler);
+            button.onclick = () => console.log('2');
+        </script>
+
+        
+
+    </body>
+</html>

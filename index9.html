@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .alert {
+                padding: 16px;
+                border: 1px solid #d6e9c6;
+                border-radius: 5px;
+                color: #3c763d;
+                background-color: #dff0d8;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="hider">Нажми меня, чтоб спрятать</button>
+        <!-- <div class="alert">
+            <strong>Всем привет!</strong> Вы прочитали важное сообщение.
+        </div> -->
+        <ol id="ol">
+            <li id="li">
+                <li>0</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </li>
+        </ol>
+    <!---->
+    <!-- <script>
+        let div = document.createElement('div');
+        // let textNode = document.createTextNode('A вот и я');
+
+        div.className = "alert";
+        div.innerHTML = "<strong>Всем привет!</strong> Вы прочитали важное сообщение.";
+        document.body.append(div);
+    </script> -->
+
+    <a href="/" onclick="return false">Нажми здесь</a>
+    или
+    <a href="/" onclick="event.preventDefault()">здесь</a>
+    
+    <script>
+        ol.before('before');
+        ol.after('after');
+
+        let liFirst = document.createElement('li');
+        liFirst.innerHTML = 'prepend';
+        ol.prepend(liFirst);
+
+        let liLast = document.createElement('li');
+        liLast.innerHTML = 'append';
+        ol.append(liLast);
+    </script>
+    <script>
+        document.getElementById('hider').onclick = function() {
+            document.getElementById('ol').hidden = true;
+        }
+    </script>
+    <script>
+        let div = document.createElement('div');
+        div.className = "alert";
+        div.innerHTML = "<strong>Всем привет!</strong> Вы прочитали важное сообщение.";
+    
+        document.body.append(div);
+        setTimeout(() => div.remove(), 1000);
+    </script>
+    <script>
+        let div2 = div.cloneNode(true); // клонировать сообщение
+        div2.querySelector('strong').innerHTML = 'Всем пока!'; // изменить клонированный элемент
+
+        div.after(div2);
+    </script>
+    </body>
+</html>
